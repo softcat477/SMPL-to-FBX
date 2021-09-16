@@ -19,12 +19,15 @@ class PathFilter(object):
         if type(dance_types) != list:
             dance_types = PathFilter.dance_types
 
+        print (dance_genres)
+        print (dance_types)
+        print (music_IDs)
+
         ret = []
         for path in sorted(glob.glob(osp.join(base_path, "*.pkl"))):
             filename = path.split("/")[-1].replace(".pkl", "")
             d_genre, d_type, _, _, m_id, _, _ = filename.split("_")
             m_id = m_id[-1]
-            print (d_genre, d_type, m_id)
             if d_genre in dance_genres and d_type in dance_types and m_id in music_IDs:
                 ret.append(path)
         return ret
