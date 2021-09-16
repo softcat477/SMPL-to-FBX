@@ -6,6 +6,8 @@ import os
 from typing import Dict
 from typing import Tuple
 
+from PathFilter import PathFilter
+
 class SmplObjects(object):
     joints = ["m_avg_Pelvis"
     ,"m_avg_L_Hip"
@@ -39,7 +41,10 @@ class SmplObjects(object):
     ,"m_avg_R_Hand"]
     def __init__(self, read_path):
         self.files = {}
-        for path in sorted(glob.glob(os.path.join(read_path, "*.pkl"))):
+
+        # For AIST naming convention
+        paths = PathFilter.filter(read_path, dance_genres=["gBR"],  dance_types=["sBM"], music_IDs=["0"])
+        for path in paths:
             filename = path.split("/")[-1]
             with open(path, "rb") as fp:
                 data = pickle.load(fp)

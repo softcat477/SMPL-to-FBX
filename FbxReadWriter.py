@@ -62,6 +62,8 @@ class FbxReadWrite(object):
         if verbose==True:
             print ("After time mode:{}".format(lScene.GetGlobalSettings().GetTimeMode()))
 
+        self.destroyAllAnimation()
+
         lAnimStackName = pkl_filename
         lAnimStack = FbxAnimStack.Create(lScene, lAnimStackName)
         lAnimLayer = FbxAnimLayer.Create(lScene, "Base Layer")
@@ -134,3 +136,10 @@ class FbxReadWrite(object):
 
     def destroy(self):
         self.lSdkManager.Destroy()
+
+    def destroyAllAnimation(self):
+        lScene = self.lScene
+        animStackCount = lScene.GetSrcObjectCount(FbxCriteria.ObjectType(FbxAnimStack.ClassId))
+        for i in range(animStackCount):
+            lAnimStack = lScene.GetSrcObject(FbxCriteria.ObjectType(FbxAnimStack.ClassId), i)
+            lAnimStack.Destroy()

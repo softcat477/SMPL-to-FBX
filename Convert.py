@@ -37,4 +37,6 @@ if __name__ == "__main__":
             fbxReadWrite.destroy()
             print ("- - Distroy")
             raise e
+        finally:
+            fbxReadWrite.destroy()
 
