@@ -1,9 +1,11 @@
 # SMPL to FBX
+![](Imgs/teaser.gif)
+
 I can convert the pose paremeters to a fbx file.
 
 ## Steps
 1. Install [Python FBX](https://download.autodesk.com/us/fbx/20112/fbx_sdk_help/index.html?url=WS1a9193826455f5ff453265c9125faa23bbb5fe8.htm,topicNumber=d0e8312).
-1. Download the [SMPL fbx model](https://smpl.is.tue.mpg.de/en) for unity. Keep the male model `SMPL_m_unityDoubleBlends_lbs_10_scale5_207_v1.0.0.fbx`.
+1. Download the [SMPL fbx model](https://smpl.is.tue.mpg.de) for unity. Keep the male model `SMPL_m_unityDoubleBlends_lbs_10_scale5_207_v1.0.0.fbx`.
 2. `pip install -r requirements.txt`
 3. Here's the file structure:
     ```
