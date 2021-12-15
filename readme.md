@@ -1,7 +1,7 @@
 # SMPL to FBX
 ![](Imgs/teaser.gif)
 
-I can convert the pose paremeters to a fbx file.
+I can convert motions in SMPL format into FBX files.
 
 ## Steps
 1. Install [Python FBX](https://download.autodesk.com/us/fbx/20112/fbx_sdk_help/index.html?url=WS1a9193826455f5ff453265c9125faa23bbb5fe8.htm,topicNumber=d0e8312).
