@@ -21,6 +21,7 @@ I can convert motions in SMPL format into FBX files.
     ```
 4. `python3 Convert.py --input_pkl_base <pkl_path> --fbx_source_path <fbx_path>/SMPL_m_unityDoubleBlends_lbs_10_scale5_207_v1.0.0.fbx --output_base <output_path>` to start converting.
 ## What's inside the pkl file?
+A pkl file contains a dictionary with two keys: `smpl_poses` and `smpl_trans`. There's a sample pkl file in `./Pkls/sample.pkl`.
 * `Dict["smpl_poses"]` : A `(N, 72)` ndarray, where `N` is the frame number.
     * Joint order: 
         ```
@@ -52,6 +53,6 @@ I can convert motions in SMPL format into FBX files.
     * `72` is from `24joints*3`; `3` is the dimension for the [rotation vector](https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation) of each joint.
 * `Dict["smpl_trans"]`: A `(N, 3)` ndarray. The translation of the Pelvis in each frame.
 * Basically following the [AIST++](https://google.github.io/aistplusplus_dataset/factsfigures.html) naming rule. The code is designed specifically to convert the AIST++ dance motions into fbx files.
-## ??
+## Appendix
 ### I got a translation vector `[d0, d1, d2]` of a frame. How do I assign each dimension to the correct axis?
 Follow this order:![](Imgs/global_axis.jpg)
