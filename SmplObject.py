@@ -43,7 +43,8 @@ class SmplObjects(object):
         self.files = {}
 
         # For AIST naming convention
-        paths = PathFilter.filter(read_path, dance_genres=["gBR"],  dance_types=["sBM"], music_IDs=["0"])
+        #paths = PathFilter.filter(read_path, dance_genres=["gBR"],  dance_types=["sBM"], music_IDs=["0"])
+        paths = PathFilter.filter(read_path, dance_genres=None,  dance_types=None, music_IDs=None)
         for path in paths:
             filename = path.split("/")[-1]
             with open(path, "rb") as fp:
