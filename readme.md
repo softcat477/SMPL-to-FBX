@@ -56,3 +56,13 @@ A pkl file contains a dictionary with two keys: `smpl_poses` and `smpl_trans`. T
 ## Appendix
 ### I got a translation vector `[d0, d1, d2]` of a frame. How do I assign each dimension to the correct axis?
 Follow this order:![](Imgs/global_axis.jpg)
+
+### Bones
+```python
+bones=[(0,1), (1,4), (4,7), (7,10), # R leg
+       (0,2), (2,5), (5,8), (8,11), # L leg
+       (0,3), (3,6), (6,9), # Spine
+       (9,12), (12,15), # Head
+       (9,13), (13,16), (16,18), (18,20), (20,22), # R arm
+       (9,14), (14,17), (17,19), (19,21), (21,23)] # L arm
+```
