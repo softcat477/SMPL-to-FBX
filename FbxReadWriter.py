@@ -104,23 +104,23 @@ class FbxReadWrite(object):
 
         # 3. Write smpl_trans to f_avg_root
         smpl_trans = smpl_params["smpl_trans"]
-        name = "m_avg_root"
+        name = "root"
         node = lRootNode.FindChild(name)
         lCurve = node.LclTranslation.GetCurve(lAnimLayer, "X", True)
         if lCurve:
-            self._write_curve(lCurve, smpl_trans[:, 0])
+            self._write_curve(lCurve, smpl_trans[:, 2])
         else:
             print ("Failed to write {}, {}".format(name, "x"))
 
-        lCurve = node.LclTranslation.GetCurve(lAnimLayer, "Y", True)
+        lCurve = node.LclTranslation.GetCurve(lAnimLayer, "Y", True) # Translation on the Y axis (in blender, this is not the vertical axis but one of the axis that forms the horizontal plane)
         if lCurve:
-            self._write_curve(lCurve, smpl_trans[:, 1])
+            self._write_curve(lCurve, smpl_trans[:, 0])
         else:
             print ("Failed to write {}, {}".format(name, "y"))
 
         lCurve = node.LclTranslation.GetCurve(lAnimLayer, "Z", True)
         if lCurve:
-            self._write_curve(lCurve, smpl_trans[:, 2])
+            self._write_curve(lCurve, smpl_trans[:, 1])
         else:
             print ("Failed to write {}, {}".format(name, "z"))
 
