@@ -1,7 +1,25 @@
 # SMPL to FBX
+
 ![](Imgs/teaser.gif)
 
+> 🤖 Update 2023: Support blender addons.
+
 I can convert motions in SMPL format into FBX files.
+
+## Blender addons
+Blender addon allows you to load SMPL into Blender without setting up FBX SDK and get the best of Blender's power.
+
+Blender files and part of codes are based on https://smpl.is.tue.mpg.de/.
+
+### Install blender addon:
+(download zip file from Releases) -> `Edit` -> `Preferences` -> `Add-ons` -> `Install` -> (select the zip file) -> search smpl -> check the inventory of `SMPL: Load SMPL from pickle`
+
+https://github.com/softcat477/SMPL-to-FBX/assets/25975988/f212d1ed-d7b7-4481-be14-5866f4172075
+
+### Load a smpl file:
+See the screen recording.
+
+https://github.com/softcat477/SMPL-to-FBX/assets/25975988/e9405fc4-9748-4d67-9118-9e63e04bd027
 
 ## Steps
 1. Install [Python FBX](https://download.autodesk.com/us/fbx/20112/fbx_sdk_help/index.html?url=WS1a9193826455f5ff453265c9125faa23bbb5fe8.htm,topicNumber=d0e8312).
